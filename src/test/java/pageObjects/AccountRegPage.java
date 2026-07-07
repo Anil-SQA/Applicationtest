@@ -1,5 +1,7 @@
 package pageObjects;
 
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -138,7 +140,20 @@ public class AccountRegPage extends BasePage{
     }
     
     public void createAccountbtn() {
-    	createbtn.click();
+    	//Element notable to interact due to add we are adding scroll functionality.
+    	try {
+    		createbtn.click();
+        } catch (ElementClickInterceptedException e) {
+
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+
+            js.executeScript(
+                "arguments[0].scrollIntoView({block:'center'});",
+                createbtn);
+
+            js.executeScript("arguments[0].click();", createbtn);
+        }
+    	
     }
     
  

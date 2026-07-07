@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utilities.WaitUtils;
+
 public class HomePage extends BasePage {
 
 	public HomePage(WebDriver driver) {
@@ -14,7 +16,8 @@ public class HomePage extends BasePage {
 	@FindBy(xpath="//a[normalize-space()='Signup / Login']")
 	WebElement lnkSignuplgn;
 	
-	@FindBy(xpath="//li[10]//a[1]")
+	//Its dynamic element use from parent.
+	@FindBy(xpath="//header[@id='header']//a[i[contains(@class,'fa-user')]]")
 	WebElement loggedinuser;
 	
 	@FindBy(xpath="//li[5]//a[1]")
@@ -25,8 +28,9 @@ public class HomePage extends BasePage {
 		lnkSignuplgn.click();
 	}
 	
+	//Due to ads we will use the wait method to element visible.
 	public boolean loginUsername() {
-		return loggedinuser.isDisplayed();
+	 	return WaitUtils.waitForVisibility(driver,loggedinuser).isDisplayed();
 	}
 	
 	public void deleteAct() {
