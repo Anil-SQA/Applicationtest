@@ -24,6 +24,9 @@ public class SignupPage extends BasePage {
 	@FindBy(xpath="//button[normalize-space()='Signup']")
 	WebElement buttonSignup;
 	
+	@FindBy(xpath="//h2[normalize-space()='Login to your account']")
+	WebElement Logintitle;
+	
 	@FindBy(xpath="//input[@data-qa='login-email']")
 	WebElement logineamilfield;
 	
@@ -32,6 +35,9 @@ public class SignupPage extends BasePage {
 	
 	@FindBy(xpath="//button[@data-qa='login-button']")
 	WebElement loginbtn;
+	
+	@FindBy(xpath="//p[normalize-space()='Your email or password is incorrect!']")
+	WebElement validationMsg;
 	
 	public boolean headingCheck() {
 		return Signupheading.isDisplayed();
@@ -48,6 +54,10 @@ public class SignupPage extends BasePage {
 	public void signupBtn() {
 		buttonSignup.click();
 	}
+	
+	public boolean loginHead() {
+		return Logintitle.isDisplayed();
+	}
 
 	public void enterLoginemail(String remail) {
 		logineamilfield.sendKeys(remail);
@@ -59,6 +69,11 @@ public class SignupPage extends BasePage {
 	
 	public void clickLoginbtn() {
 		loginbtn.click();
+	}
+	
+	public String validationMsg() {
+		return validationMsg.getText();
+	
 	}
 	
 	

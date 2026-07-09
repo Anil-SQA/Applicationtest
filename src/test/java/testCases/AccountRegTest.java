@@ -18,6 +18,7 @@ public class AccountRegTest extends BaseClasstest{
 		try {
 		logger.info("Started Application");
 	HomePage hp=new HomePage(driver);
+		hp.home();
 		hp.clickSignuplogin();
 	
 	logger.info("Singup/Login Page");	
@@ -53,7 +54,7 @@ public class AccountRegTest extends BaseClasstest{
 		arp.enterState("Karnataka");
 		arp.enterCity("Bangalore");
 		arp.enterZip("564321");
-		arp.enterMobileno(randomAlphanumeric());
+		arp.enterMobileno(randomNumber());
 		arp.createAccountbtn();
 		
 		//To close the adds	

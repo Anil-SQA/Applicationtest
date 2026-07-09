@@ -13,6 +13,9 @@ public class HomePage extends BasePage {
 
 	}
 	
+	@FindBy(xpath="//a[normalize-space()='Home']")
+	WebElement lnkHome;
+	
 	@FindBy(xpath="//a[normalize-space()='Signup / Login']")
 	WebElement lnkSignuplgn;
 	
@@ -23,6 +26,10 @@ public class HomePage extends BasePage {
 	@FindBy(xpath="//li[5]//a[1]")
 	WebElement deleteact;
 	
+	
+	public boolean home() {
+		return lnkHome.isDisplayed();
+	}
 	
 	public void clickSignuplogin() {
 		lnkSignuplgn.click();

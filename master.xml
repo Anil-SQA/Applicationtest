@@ -7,8 +7,10 @@
   <parameter name="browser" value="chrome"/>
   
     <classes>
-      <class name="testBase.BaseClasstest"/>
-      <class name="testCases.AccountRegTest"/>
+    <class name="testBase.BaseClasstest"/>
+    <!--    <class name="testCases.AccountRegTest"/> 
+      <class name="testCases.LoginWithValidCred"/>  -->
+      <class name="testCases.LoginWithInValidCred"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
