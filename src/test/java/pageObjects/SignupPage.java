@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utilities.WaitUtils;
+
 public class SignupPage extends BasePage {
 
 	public SignupPage(WebDriver driver) {
@@ -39,6 +41,10 @@ public class SignupPage extends BasePage {
 	@FindBy(xpath="//p[normalize-space()='Your email or password is incorrect!']")
 	WebElement validationMsg;
 	
+	@FindBy(xpath="//p[normalize-space()='Email Address already exist!']")
+	WebElement validationmsgEmailused;
+	
+	
 	public boolean headingCheck() {
 		return Signupheading.isDisplayed();
 	}
@@ -55,8 +61,8 @@ public class SignupPage extends BasePage {
 		buttonSignup.click();
 	}
 	
-	public boolean loginHead() {
-		return Logintitle.isDisplayed();
+	public String loginHead() {
+	    return WaitUtils.waitForVisibility(driver, Logintitle).getText();
 	}
 
 	public void enterLoginemail(String remail) {
@@ -74,6 +80,10 @@ public class SignupPage extends BasePage {
 	public String validationMsg() {
 		return validationMsg.getText();
 	
+	}
+	
+	public String validateEmail() {
+		return validationmsgEmailused.getText();
 	}
 	
 	

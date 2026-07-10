@@ -26,9 +26,17 @@ public class HomePage extends BasePage {
 	@FindBy(xpath="//li[5]//a[1]")
 	WebElement deleteact;
 	
+	@FindBy(xpath="//a[normalize-space()='Logout']")
+	WebElement Logout;
+	
+	@FindBy(xpath="//a[normalize-space()='Contact us']")
+	WebElement contactUs;
+	
+	@FindBy(xpath="//a[contains(text(),'Test Cases')]")
+	WebElement lnkTestCases;
 	
 	public boolean home() {
-		return lnkHome.isDisplayed();
+		return WaitUtils.waitForVisibility(driver,lnkHome).isDisplayed();
 	}
 	
 	public void clickSignuplogin() {
@@ -43,6 +51,20 @@ public class HomePage extends BasePage {
 	public void deleteAct() {
 		deleteact.click();
 	}
+	
+	public void clickLogout() {
+		Logout.click();
+	}
+	
+	public void contactUslnk() {
+		contactUs.click();
+	}
+	
+	public void clickTestCases() {
+		lnkTestCases.click();
+	}
+	
+	
 	
 	
 

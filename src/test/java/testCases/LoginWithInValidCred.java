@@ -19,7 +19,7 @@ public class LoginWithInValidCred extends BaseClasstest {
 		logger.info("On the Signup/LoginPage");
 		SignupPage lp = new SignupPage(driver);
 		lp.loginHead();
-		lp.enterLoginemail("QAtesting.1@gmail.com");
+		lp.enterLoginemail("QAtesting1@gmail.com");
 		lp.enterLoginpwd("1234");
 		lp.clickLoginbtn();
 		System.out.println(lp.validationMsg());
