@@ -4,17 +4,21 @@
   <test thread-count="5" name="Test">
   
    <parameter name="os" value="windows"/>
-  <parameter name="browser" value="edge"/>
+  <parameter name="browser" value="chrome"/>
   
     <classes>
     <class name="testBase.BaseClasstest"/>
  <!-- <class name="testCases.AccountRegTest"/> 
-      <class name="testCases.LoginWithValidCred"/>  -->
+      <class name="testCases.LoginWithValidCred"/>  
       <class name="testCases.LoginWithInValidCred"/>
       <class name="testCases.LogOutTest"/> 
       <class name="testCases.RegisterUserWithExistingEmailTest"/> 
       <class name="testCases.ContactUsTest"/>   
-      <class name="testCases.TestCasesPageTest"/>
+      <class name="testCases.TestCasesPageTest"/> 
+      <class name="testCases.ProductsTest"/>	 
+      <class name="testCases.SearchProductsTest"/> 
+      <class name="testCases.SubscriptionHomePageTest"/>  -->
+      <class name="testCases.SubscriptionCartTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -86,5 +86,4 @@ public class SignupPage extends BasePage {
 		return validationmsgEmailused.getText();
 	}
 	
-	
 }
